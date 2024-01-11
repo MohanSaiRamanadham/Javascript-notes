@@ -1,0 +1,73 @@
+                                                        01/08/2024:
+                                                        -----------
+-->We can change HTML elements by using JavaScript.for that we need to use one method which is "document.getElementById()"
+for Ex:
+        document.getElementById("demo").innerHTML = "Hello JavaScript";
+here in the above last example we r finding the HTML element which is having id "demo" by using "document.getElementById" and by using innerHTML we r replacing HTML content in it.
+
+-->We can use this method to
+    1.to Change HTML elements
+    2.to change HTML attributes
+    3.to change HTML CSS.
+-->Where can we write this Java Script code :
+Java Script code will be written in "script" Tag either in <body> or <head> or as external file also.
+for Ex:
+       <script> Code can be written here </script>
+-->There r few advantages if we write code in external file it will seperate HTML and Code.
+-->Cached JavaScript files can speed up page loads
+-->if we want to use multiple JavaScript files we need to use multiple Script tags.
+ for Ex:
+        <script sr="source1.js"></script>
+        <scipt src="source2.js"></script>
+
+Java Script Display Output methods :
+------------------------------------
+-->In JavaScript there r few methods to display output.They are :
+      a. Writing into an HTML element, using innerHTML.
+      b. Writing into the HTML output using document.write().
+      c. Writing into an alert box, using window.alert().
+      d. Writing into the browser console, using console.log().
+
+-->Using innerHTML:
+   To access an HTML element, JavaScript can use the document.getElementById(id) method.
+   The id attribute defines the HTML element. The innerHTML property defines the HTML content to be changed.
+   For Ex: document.getElementById("demo").innerHTML = "Hello JavaScript";
+
+-->JavaScript Can Change HTML Attribute Values.
+
+Where to write JavaScript :
+---------------------------
+               Javascript code is written in between script tags i.e.., <script>. We can write this script tag either in body or in head.we can also create an external file for this javascript code and we can call it in ou HTML code. we can write any nuber of scripts in a HTML document.
+  Ex:
+     <script>
+            document.getElementById("demo").innerHTML = "My First JavaScript";
+     </script>
+
+                                                                 01/11/2024:
+                                                                 -----------
+
+JavaScript Functions and Events :
+---------------------------------
+JavaScript function is a block of code it will be executed when it is called by an events like click and dblclick etc..,.
+Ex:
+  <button type="button" onclick="myFunction()">Try it</button>
+
+<script>
+       function myFunction() {
+       document.getElementById("demo").innerHTML = "Paragraph changed.";
+       }
+</script>
+
+NOTE: Placing scripts at the bottom of the <body> element improves the display speed, because script interpretation slows down the display.
+-----
+
+External JavaScript :
+---------------------
+we can write javaScript code in an external file saved with an extension of .js .we can use this external file for multiple HTML documents.to call this file in our HTML code we need to use src attribute in script tag.
+ Ex:
+    <button type="button" onclick="myFunction()">Try it</button>
+
+    <p>This example links to "myScript.js".</p>
+    <p>(myFunction is stored in "myScript.js")</p>
+
+<script src="myScript.js"></script>
