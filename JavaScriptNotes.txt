@@ -70,4 +70,118 @@ we can write javaScript code in an external file saved with an extension of .js 
     <p>This example links to "myScript.js".</p>
     <p>(myFunction is stored in "myScript.js")</p>
 
-<script src="myScript.js"></script>
+    <script src="myScript.js"></script>
+
+JavaScript OUTPUTS:
+-------------------
+to display output in javaScript we can use the following:
+1.Writing into an HTML element, using innerHTML.
+2.Writing into the HTML output using document.write().
+3.Writing into an alert box, using window.alert().
+4.Writing into the browser console, using console.log().
+
+Using document.write():
+-----------------------
+This is used for testing purpose.
+Calling document.write() when HTML is loaded will delete whole HTML content.
+ex:
+   <h1>My First Web Page</h1>
+   <p>My first paragraph.</p>
+   <button type="button" onclick="document.write(5 + 6)">Try it</button>
+
+Using windows.alert():
+----------------------
+To display output in a alert box we can use this windows.alert();
+Ex:
+   <h1>My First Web Page</h1>
+   <p>My first paragraph.</p>
+
+   <script>
+    window.alert(5 + 6);
+   </script>
+
+In JavaScript, the window object is the global scope object. This means that variables, properties, and methods by default belong to the window object. This also means that specifying the window keyword is optional.
+
+Using console.log():
+--------------------
+This method is used for debugging purpose.Output will be displayed in browser console.
+Ex:
+  <script>
+   console.log(5 + 6);
+  </script>
+
+
+JavaScript Print:
+------------------
+JavaScript does not have any print object or print methods.
+
+You cannot access output devices from JavaScript.
+
+The only exception is that you can call the window.print() method in the browser to print the content of the current window.
+Ex:
+   <button onclick="window.print()">Print this page</button>
+
+
+                ----------------------*******************************************************----------------------------------------
+
+JavaScript Statements:
+----------------------
+A computer program  is a set of instructions that to be executed by the computer.
+In programming these instructions are called statements.
+A JavaScript program is a list of programming statements.
+Ex: 
+   let x, y, z;    // Statement 1
+   x = 5;          // Statement 2
+   y = 6;          // Statement 3
+   z = x + y;      // Statement 4
+
+Javascript programs contains number of javascript statements. These statements executed one by one in a order.
+
+NOTE:
+----
+In HTML, JavaScript programs are executed by the web browser.
+
+Semicolons(;):
+--------------
+These semicolons seperates statements.
+in javaScript these semicolon is not mandatory.
+
+JavaScript WhiteSpaces:
+-----------------------
+Javascript ignores multiple spaces.we can use any number of spaces to make our code for better understanding.
+Ex:
+  The following lines are equivalent:
+   let person = "Hege";
+   let person="Hege";
+
+maintaining spaces around operators is good practice  ( = + - * / )
+Ex:
+   let x + y = z;
+
+line length and line breaks:
+----------------------------
+In programming if line length is more than 80 characters it is better to break the line at operators.
+Ex:
+    <script>
+      document.getElementById("demo").innerHTML =
+      "Hello Dolly!";
+    </script>
+
+Code Blocks:
+------------
+if we write group of statements together in between {} is code blocks.we can see this code bloks in functions.
+Ex:
+   function myFunction() {
+     document.getElementById("demo1").innerHTML = "Hello Dolly!";
+     document.getElementById("demo2").innerHTML = "How are you?";
+   } 
+
+
+Javascript Keywords:
+--------------------
+In Javascript every statement is often starts with a keyword to define what kind of action to be performed.
+There are few keyword reserved in javascript .we shouldn't use this keywords as variable name.Few of the keywords are:
+   var, let, const, function, return, if, switch, for, try.
+
+ 
+  
