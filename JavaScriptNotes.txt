@@ -183,5 +183,104 @@ In Javascript every statement is often starts with a keyword to define what kind
 There are few keyword reserved in javascript .we shouldn't use this keywords as variable name.Few of the keywords are:
    var, let, const, function, return, if, switch, for, try.
 
- 
-  
+                                                 01/12/2023:
+                                                 -----------
+
+Javascript syntax:
+------------------
+     Syntax is a set of rules to write a code.
+
+How to create a variable..?
+ans: 
+     let x;
+     let y;
+How to use a variable..?
+ans :
+      let x;
+      x=5;
+
+
+JavaScript Values :
+-------------------
+JavaScript syntax is saying that there are two types of values:
+1.Fixed values are called Literals.
+2.Variable values are called Variables.
+
+JavaScript Literals:
+--------------------
+Two most important rules for Literals are:
+1.Numbers should be with or without decimal point.
+Ex:
+    let x, y;
+    x = 10;
+    y = 10.5;
+
+2.Sring should be written in single or double quotes.
+    let name;
+    name = "mohan";
+    name = 'mohan';
+
+JavaScript Variables:
+---------------------
+These variables are used to store values of a data.
+In JavaScript var, let, const are used to declare variables.
+
+JavaScript Operators:
+---------------------
+JavaScript uses arithmetic operators ( + - * / ) to compute values.
+Assignment(=) operator is used to assign values.
+
+JavaScript Expressions:
+------------------------
+An expression is a combination of values, variables, and operators, which computes to a value.
+The computation is called an evaluation.
+For Ex:
+       5 * 10 evaluates to 50:
+
+JavaScript Keywords:
+--------------------
+These Keywords will tell what operation to be performed.
+let and var are the key words will be used to create variable.
+
+JavaScript Comments:
+--------------------
+Not all JavaScript statements are "executed".
+Code after double slashes // or between /* and */ is treated as a comment.
+Comments are ignored, and will not be executed:
+
+JavaScript Identifiers:
+--------------------
+Identifiers are the names of variables, keywords and functions.
+We need to follow few rules while writing this Identifiers.They are:
+It should begin with either alphabets[A-Z or a-z] or underScore or "$".
+Nubmbers are not allowed to begin a identifier.
+We shouldn't use keyWords as Identifiers.
+JavaScript is case sensitive.
+
+JavaScript and Camel Case:
+--------------------------
+There are different ways to write a variable name.If that name is containing two word we need to joint those.for Joining some will use Underscore and some will use hyphen.
+but actually we shouldn't use Hyphen(-) in Javascript Identifiers.
+for Ex:
+    first-name, last-name, master-card, inter-city.
+
+NOTE: Hyphens are not allowed in JavaScript. They are reserved for subtractions.
+-----
+
+Better way to write Identifiers:
+1.Underscore:
+-------------
+for Ex:
+        first_name, last_name, master_card, inter_city.
+
+2.Upper Camel Case (Pascal Case):
+-------------------------------
+for Ex:
+        FirstName, LastName, MasterCard, InterCity.
+
+3.Lower Camel Case: JavaScript programmers tend to use camel case that starts with a lowercase letter:
+-------------------
+for Ex:
+       firstName, lastName, masterCard, interCity.
+
+
