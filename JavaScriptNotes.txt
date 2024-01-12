@@ -283,4 +283,178 @@ for Ex:
 for Ex:
        firstName, lastName, masterCard, interCity.
 
+JavaScript Variables:
+---------------------
+Variable is a container used to store data. We can declare variables in four ways:
+1.Automatically.
+2.Using var keyword.
+3.Using let keyword.
+4.Using const keyword.
 
+Ex:
+   x =5;  (in this case x will be automatically declared when we started using it.)
+   var x = 5;
+   let x = 5;
+   const x = 5;
+
+NOTE:
+-----
+It is considered good programming practice to always declare variables before use.
+
+"let" keyword is used when the value of variable is changing.
+"const" keyword is used when the value of variable is doesn't change.
+ 
+If a variable is declared with no value will have the value undefine.
+
+When to Use var, let, or const?
+1. Always declare variables
+2. Always use const if the value should not be changed
+3. Always use const if the type should not be changed (Arrays and Objects)
+4. Only use let if you can't use const
+5. Only use var if you MUST support old browsers.
+
+JavaScript Data Types
+JavaScript variables can hold numbers like 100 and text values like "John Doe".
+In programming, text values are called text strings.
+JavaScript can handle many types of data, but for now, just think of numbers and strings.
+Strings are written inside double or single quotes. Numbers are written without quotes.
+If you put a number in quotes, it will be treated as a text string.
+
+
+JavaScript Let:
+---------------
+let keyword is introduced in ES6.
+Variable with let keyword is block scope.
+Variables with let keyword should declare before it use. We can not re-declare variable in same block.
+Before ES6 there is no block scope variables in JavaScript. JavaScript had Global Scope and Function Scope.
+ES6 introduced the two new JavaScript keywords: let and const which are block scoped.
+
+Variables declare with var is of global scope and it can not have block scope.
+
+Variables declared with var inside a { } block can be accessed from outside the block:
+Ex:
+   {
+     var x = 2;
+   }
+   // x CAN be used here
+
+
+Variable declared with "let" can not be re-declared. But Variable declared with "var" can be re-declared.
+ Ex: 
+   We can not do this.
+    let x = "John Doe";
+    let x = 0;
+
+   We can do this :
+   var x = "John Doe";
+   var x = 0;
+
+What is Good?
+let and const have block scope.
+let and const can not be redeclared.
+let and const must be declared before use.
+let and const does not bind to this.
+let and const are not hoisted.
+
+JavaScript Const:
+-----------------
+Variables decalared by Const will have fixed value with block scope.
+This variables should declare first before using it.
+We can not re-declare variables in the same block and also we can not re-assign the variable.
+Ex:
+  we should not re-assign the variable.
+  const PI = 3.141592653589793;
+  PI = 3.14;
+
+NOTE:
+-----
+    JavaScript const variables must be assigned a value when they are declared.
+Ex:
+    const PI = 3.14159265359;
+
+
+When to use "const":
+--------------------
+when we know the value of a variable which is not going to change we can use this const to declare a variable.
+we can use this const for declaring:
+ an array,
+ an object,
+ a function,
+ a regExp.
+
+Constant Objects and Arrays:
+----------------------------
+It does not define a constant value. It defines a constant reference to a value.
+because of this we can NOT:
+  Reassign a constant value.
+  
+ Reassign a constant array.
+Ex:
+   const cars = ["Saab", "Volvo", "BMW"];
+   cars = ["Toyota", "Volvo", "Audi"];    // ERROR
+
+Reassign a constant object.
+Ex: 
+  const car = {type:"Fiat", model:"500", color:"white"};
+  car = {type:"Volvo", model:"EX60", color:"red"};    // ERROR
+
+But you CAN:
+  Change the elements of constant array.
+Ex:
+  // You can create a constant array:
+       const cars = ["Saab", "Volvo", "BMW"];
+  // You can change an element:
+       cars[0] = "Toyota";
+  // You can add an element:
+       cars.push("Audi");
+
+Change the properties of constant object.
+Ex:
+   // You can create a const object:
+const car = {type:"Fiat", model:"500", color:"white"};
+   // You can change a property:
+car.color = "red";
+   // You can add a property:
+car.owner = "Johnson";
+
+
+Hoisting :
+variables defined with "var" are hoisted to the top and can be initialized at anytime.means we can use this variables before it's declaration.
+Ex:
+ x=10;
+ var x;
+
+Variables defined using "const" are hoisted top but not initialized.means we can not use const variables before initialization.It will give reference error if we use before initalizing.
+
+
+JavaScript Operators :
+----------------------
+There are different types of JavaScript operators:
+Arithmetic Operators
+Assignment Operators
+Comparison Operators
+String Operators
+Logical Operators
+Bitwise Operators
+Ternary Operators
+Type Operators
+
+Arithmatic Operators:
+---------------------
+Addition operator(+): to add two variable values.
+Subtraction operator (-): to subtract two variable values.
+multiplication operator (*): to multiply two variable values.
+division operator (/): to perform division of two variable values.
+modulus operator(%): The modulus operator (%) returns the division remainder.
+exponential operator(**): It will perform exponent of given variable.
+
+JavaScript Assignment Operators :
+----------------------------------
+Operator	Example	       Same As
+=	         x = y	         x = y
++=	         x += y	         x = x + y
+-=	         x -= y	         x = x - y
+*=	         x *= y	         x = x * y
+/=	         x /= y        	 x = x / y
+%=	         x %= y	         x = x % y
+**=	        x **= y	         x = x ** y
