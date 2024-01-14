@@ -457,4 +457,121 @@ Operator	Example	       Same As
 *=	         x *= y	         x = x * y
 /=	         x /= y        	 x = x / y
 %=	         x %= y	         x = x % y
-**=	        x **= y	         x = x ** y
+**=	         x **= y	 x = x ** y
+
+                                                               01/14/2024:
+                                                               -----------
+Data Types of JavaScript :
+--------------------------
+In javaScript there are total 8 types of dataTypes are there:
+String
+Number
+BigInt
+Boolean
+Undefine
+Null
+Symbol
+Object.(Array, Object, Date).
+
+
+Number:
+-------
+All javaScript numbers are stored as decimal point numbers(floating point numbers).
+we can write numbers with or without decimal point.
+Ex:
+   x=10;
+   x=10.0;
+
+Extra small or extra large numbers also we can store by using Exponentials.
+Ex:
+   let y = 123e5;    // 12300000
+   let z = 123e-5;   // 0.00123
+
+NOTE:
+   Most programmin languages have many number types:
+   in INTEGERS:
+     byte(8-bits)
+     short(16-bits)
+     int(32-bits)
+     long(64-bits)
+   in Real Numbers:
+     float(32-bits)
+     double(64-bits) 
+
+BigInt:
+------
+In javascript all numbers are stored in 64- bit floating point format. if we want to store a big value then we can use this bigInt dataType.
+Ex:
+   let x = BigInt("123456789012345678901234567890");
+
+String :
+---------
+String is a data type where we can store data in between double or single quotes.
+Ex: 
+   let x;
+   x = "mohan";
+   x = 'mohan';
+we can use Quotes inside also but it shouldn't match with outside Quotes.
+Ex:
+  x="mohan is working for 'GalaxE Solutions'";
+
+In JavaScript  variable is of dynamic data type.it can store any kind of data.So we need to be careful while assigning a value to it.
+Ex-1:
+x=10 + 10;
+result = 20 (datatype = number )
+x=10 + "Krishna";
+result = "10Krishna"; (datatype = String )
+
+NOTE :
+------
+if we perform addition operation of a Number and String will results a String.
+
+Boolean:
+--------
+Boolean will have only two values "true" or "false". Booleans are often used in conditional testing.
+
+Ex:
+   let x = 5;
+   let y = 5;
+   let z = 6;
+   x == y;  (result will be true)
+   x == z;  (result will be false)
+
+JavaScript Arrays:
+------------------
+Arrays are written in square brackets"[]".In Array we can store different items under same variable with the help of indexes.
+Ex: 
+  const arrayName=[1, 2, "mohan", "krishna"];
+
+JavaScript Objects :
+--------------------
+In Objects data is stored in curly braces"{}" in name-Value pair format.each pair is seperated by comma(,).
+Ex:
+  const objectName={
+      name:"Mohan",
+      age: 25      
+  }
+
+
+typeOf Operator :
+-----------------
+typeOf operator is helpful to find the data type of a variable or an Expression.
+Ex:
+   typeof ""             // Returns "string"
+   typeof "John"         // Returns "string"
+   typeof "John Doe"     // Returns "string"
+   typeof 0              // Returns "number"
+   typeof 314            // Returns "number"
+   typeof 3.14           // Returns "number"
+   typeof (3)            // Returns "number"
+   typeof (3 + 4)        // Returns "number"
+
+Undefine :
+----------
+    In JavaScript a variable without initalization or variable whose value is undefined will also be the typeOf undefine
+  Ex: 
+    let car; //type is undefine
+
+    Any variable can be emptied, by setting the value to undefined. The type will also be undefined.
+  Ex:
+    car = undefined;  //type is undefine
