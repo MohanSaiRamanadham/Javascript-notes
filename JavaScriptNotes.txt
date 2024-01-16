@@ -575,3 +575,303 @@ Undefine :
     Any variable can be emptied, by setting the value to undefined. The type will also be undefined.
   Ex:
     car = undefined;  //type is undefine
+
+JavaScript FUNCTIONS :
+----------------------
+Function is a block of code which will be executed when something invokes it.we will see syntax of function in below example.
+A JavaScript function is defined with the function keyword, followed by a name, followed by parentheses ().
+Function names can contain letters, digits, underscores, and dollar signs (same rules as variables).
+The parentheses may include parameter names separated by commas:
+(parameter1, parameter2, ...)
+The code to be executed, by the function, is placed inside curly brackets: {}
+
+Ex-1 :
+    function functionName(){
+    statement-1
+    statement-2
+       '
+       '
+    statement-n  
+    }
+
+Ex-2 :
+   function name(parameter1, parameter2, parameter3) {
+      // code to be executed
+   }
+
+Function parameters are listed inside the parentheses () in the function definition.
+Function arguments are the values received by the function when it is invoked.
+Inside the function, the arguments (the parameters) behave as local variables.
+
+
+Function Return :
+-----------------
+when JavaScript reaches return keyword it will stop executing function.
+JavaScript often compute return statement and it will returns value back where function is invoked.
+
+Accessing a function with incorrect parameters can return an incorrect answer.
+Accessing a function without () returns the function and not the function result.
+Ex:
+   function toCelsius(fahrenheit) {
+      return (5/9) * (fahrenheit-32);
+   }
+
+   let value = toCelsius;
+
+NOTE :
+------
+As you see from the examples above, toCelsius refers to the function object, and toCelsius() refers to the function result.
+
+Functions used as Variable Values:
+----------------------------------
+we can also use functions as variable values.
+Ex:
+   function percent(aquiredMarks,totalMarks){
+   percentage=(aquiredMarks/totalMarks)*100;
+    return percentage;
+   }
+  let percentage= "Your percentage is "+percent(aquiredMarks,totalMarks);
+  
+
+JavaScript Object:
+------------------
+In real life, a car is an object. A car has properties like weight and color, and methods like start and stop.
+Objects are variables too. But objects can contain many values. It is a common practice to declare objects with the const keyword.
+Ex:
+  const car = {type:"Fiat", model:"500", color:"white"};
+Object Properties:
+------------------
+The name:values pairs in JavaScript objects are called properties.
+Ex: 
+const person = {
+  firstName: "John",
+  lastName: "Doe",
+  age: 50,
+  eyeColor: "blue"
+};
+
+
+In the above example :
+
+Property        Property Value
+--------	--------------
+firstName	John
+lastName	Doe
+age	        50
+eyeColor	blue
+
+You can access object properties in two ways:
+1.objectName.propertyName
+Ex: person.lastName;
+
+2.objectName["propertyName"]
+Ex: person["lastName"];
+
+Object Methods :
+----------------
+Objects can also have methods in it.
+methods are stored as a properties in an object.
+Ex:
+const personDetails = {
+firstName : "Mohan";
+lastName  : "Sai";
+age       :  25;
+fullName  :  function(){
+return this.firstName + this.lastName;
+}
+}
+
+This Keyword :   
+--------------
+In JavaScript, the "this" keyword refers to an object."this" keyword refers to different objects depends on how it is used.In object method "this" refers to object.
+Alone, "this" refers to the global object.
+In function "this" refers to global object.
+In a function, in strict mode, this is undefined.
+In an event, this refers to the element that received the event.
+Methods like call(), apply(), and bind() can refer this to any object.
+In a function definition, this refers to the "owner" of the function.
+In the example above, this is the person object that "owns" the fullName function.
+In other words, this.firstName means the firstName property of this object.
+
+Accessing Object Methods :
+------------------------
+You access an object method with the following syntax:
+ objectName.methodName()
+
+name = person.fullName();
+Ex :
+   <script>
+     // Create an object:
+     const person = {
+     firstName: "John",
+     lastName: "Doe",
+     id: 5566,
+     fullName: function() {
+     return this.firstName + " " + this.lastName;
+     }
+   };
+
+  // Display data from the object:
+  document.getElementById("demo").innerHTML = person.fullName();
+  </script>
+
+If you access a method without the () parentheses, it will return the function definition.
+
+
+JavaScript Events :
+-------------------
+HTML events are "things" that happen to HTML elements.
+When JavaScript is used in HTML pages, JavaScript can "react" on these events.
+
+HTML Events:
+-------------
+An HTML event can be something the browser does, or something a user does.
+Here are some examples of HTML events:
+An HTML web page has finished loading
+An HTML input field was changed
+An HTML button was clicked
+Often, when events happen, you may want to do something.
+JavaScript lets you execute code when events are detected.
+HTML allows event handler attributes, with JavaScript code, to be added to HTML elements.
+
+Ex:
+<button onclick="document.getElementById('demo').innerHTML = Date()">The time is?</button>
+
+In the example above, the JavaScript code changes the content of the element with id="demo".
+In the next example, the code changes the content of its own element (using this.innerHTML).
+
+Ex:
+<button onclick="this.innerHTML = Date()">The time is?</button>
+
+Common HTML Events:
+-------------------
+Event	                 Description
+
+onchange	  An HTML element has been changed
+onclick	          The user clicks an HTML element
+onmouseover	  The user moves the mouse over an HTML element
+onmouseout	  The user moves the mouse away from an HTML element
+onkeydown	  The user pushes a keyboard key
+onload	          The browser has finished loading the page
+
+                                                       01/16/2024
+                                                       ----------
+
+Strings :
+---------
+Strings are used to store text data. In strings data is written in between double quotes or single quotes or back-ticks (`).
+Ex:
+    let Name = "mohan";
+    let Name = 'mohan';
+   
+Quotes Inside Quotes :
+-----------------------
+You can use quotes inside a string, as long as they don't match the quotes surrounding the string.
+
+Ex:
+   let answer1 = "It's alright";
+   let answer2 = "He is called 'Johnny'";
+   let answer3 = 'He is called "Johnny"';
+
+Template Strings
+Templates were introduced with ES6 (JavaScript 2016).
+Templates are strings enclosed in backticks (`This is a template string`).
+Templates allow single and double quotes inside a string.
+
+Ex:
+    let text = `He's often called "Johnny"`;
+
+String Length :
+---------------
+we can find length of the string using it's property.
+Ex:
+   let Name = "Mohan";
+   let lengthOfName = Name.length;
+   document.write(lengthOfName);  //ans:5
+
+Escape charecters :
+-------------------
+Because strings must be written within quotes, JavaScript will misunderstand this string.
+let text = "We are the so-called "Vikings" from the north.";
+The string will be chopped to "We are the so-called ".
+To solve this problem, you can use an backslask escape character.
+The backslash escape character (\) turns special characters into string characters.
+
+Code		 Result  	Description
+\'		  '		Single quote
+\"		  "		Double quote
+\\		  \		Backslash
+
+Examples
+\" inserts a double quote in a string:
+let text = "We are the so-called \"Vikings\" from the north.";
+
+\' inserts a single quote in a string:
+let text= 'It\'s alright.';
+
+\\ inserts a backslash in a string:
+let text = "The character \\ is called backslash.";
+
+Breaking Long Lines
+For readability, programmers often like to avoid long code lines.
+A safe way to break up a statement is after an operator:
+
+Example
+document.getElementById("demo").innerHTML =
+"Hello Dolly!";
+
+A safe way to break up a string is by using string addition.
+document.getElementById("demo").innerHTML = "Hello " +
+"Dolly!";
+
+Template Strings
+Templates were introduced with ES6 (JavaScript 2016).
+Templates are strings enclosed in backticks (`This is a template string`).
+Templates allow multiline strings.
+Ex:
+  let text =
+    `The quick
+    brown fox
+    jumps over
+    the lazy dog`;
+
+String Object:
+--------------
+we can create object of a string by using new keyword.
+Ex:
+  let name = new String("Mohan");
+
+
+Do not create Strings objects.
+The new keyword complicates the code and slows down execution speed.
+String objects can produce unexpected results: 
+
+When using the == operator, x and y are equal:
+<script>
+let x = "John";        // x is a string
+let y = new String("John");  // y is an object
+document.getElementById("demo").innerHTML = (x==y);   //result is true
+</script>
+
+When using the === operator, x and y are not equal
+<script>
+let x = "John";        // x is a string
+let y = new String("John");  // y is an object
+document.getElementById("demo").innerHTML = (x===y);   //result is false
+</script>
+
+
+JavaScript objects cannot be compared.
+(x == y) true or false?
+<script>
+let x = new String("John");  // x is an object
+let y = new String("John");  // y is an object
+document.getElementById("demo").innerHTML = (x==y);    //result is false
+</script>
+
+(x === y) true or false?
+<script>
+let x = new String("John");  // x is an object
+let y = new String("John");  // y is an object
+document.getElementById("demo").innerHTML = (x===y);    //result is false
+</script>
