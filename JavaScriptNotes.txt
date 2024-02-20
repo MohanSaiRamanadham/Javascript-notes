@@ -875,3 +875,115 @@ let x = new String("John");  // x is an object
 let y = new String("John");  // y is an object
 document.getElementById("demo").innerHTML = (x===y);    //result is false
 </script>
+
+                                                    02/15/2024
+                                                   ------------
+String Methods: 
+---------------
+                javaScript String are immutable. All JavaScript String methods will produce new Strings without altering old string.the following are the most useful Sting methods are:
+
+i)length : this property will return the length of string.
+for Ex:
+      let name = "mohan";
+      document.write(name.length);     //it will return the length of the name string which is 5.
+  
+ ii) Extracting a Charecter from a String
+    There are 4 methods to extract charecters of a String. Which are mentioned below.
+     1)at(position)
+     2)charAt(position)
+     3)charCodeAt(position)
+     4)[]
+
+these all four methods will be used to extract a charecter from given position of a string.
+
+What is the difference between charAt() and at() ?
+
+both are used for extracting charecters from specific position. In "at()" method we can use negative indexing. but in charAt() we can't use negative index to extract a charecter.
+ 
+example:
+let name = "MohanSaiRamanadham";
+name.charAt(1);      //o
+name.charCodeAt(0)   //it will return uniCode of the charecter
+name.at(0)   //here we can also use negative indexing also.
+name[0]
+                                              02/20/2024
+                                              ----------
+
+iii)Extracting String Part  from a string
+    There are three methods to extract a portion of String.
+    1)slice(start Index, end index)
+    2)substring(start index, end index)
+    3)substr(start Index, length of string to extract)
+
+slice(start Index, end index): 
+------------------------------
+This is used to extract a portion of String from starting index to ending index here ending index is excluded and index value is started from 0. if you didn't mention ending index means it will extract rest of String.
+
+Ex:
+   let name = "Mohan Sai Ramanadham";
+   document.writeln(name.slice(6, 9));    //output will be "Sai"
+   document.writeln(name.slice(6));       //output will be "Sai Ramanadham"
+   document.writeln(name.slice(-14,-11))  // output will be "Sai"
+ 
+
+substring(start Index, end index):
+----------------------------------
+This method is also same as slice().but here The difference is that start and end values less than 0 are treated as 0 in substring().
+
+substr(start index , length):
+-----------------------------
+This method will extract a string from starting index to length of string.If you omit the second parameter, substr() will slice out the rest of the string. If the first parameter is negative, the position counts from the end of the string.
+
+
+iv)Converting charecters from Upper to lower and lower to upper cases:
+----------------------------------------------------------------------
+1)tolowerCase() : this method will convert Uppercase Strings to Lower case Strings.
+Ex:
+   let name ="MOHAN";
+   name.toLowerCase()           //output will be "mohan"           
+
+2)toUpperCase() : This method will convert lower case Strings to Upper case Strings.
+   let name = "mohan";
+   name.toUpperCase()          //output will be "MOHAN" 
+
+v)Adding of two Strings: 
+-------------------------
+We can add Strings by using concat method and also by using "+" Operator.
+1)concat() :
+------------ 
+Ex: 
+      let firstName = "Mohan Sai";
+      let secondName = "Ramanadham";
+      let fullName = firstName.concat(" ", secondName);         //output will be Mohan Sai Ramanadham
+
+2) Using + operator :
+--------------------
+ Ex:  let firstName = "Mohan Sai";
+      let secondName = "Ramanadham";
+      let fullName = firstName + " " + secondName;             //output will be Mohan Sai Ramanadham
+
+The below two line will do the same operations.
+text = "Hello" + " " + "World!";
+text = "Hello".concat(" ", "World!");
+
+v) removing white spaces to  String:
+------------------------------------
+1).trim() : To remove extra white spaces before and after a String this trim() method is very much useful.
+-----------
+Ex:
+    let name ="       Mohan         ";
+    name.trim();                 the output will be "Mohan"
+
+2).trimStart() :this method will also work similar to trim() but the only difference is it will remove white spaces only at the starting of String.
+----------------
+Ex:
+    let name ="       Mohan         ";
+    name.trim();                 the output will be "Mohan            "
+
+3)trimEnd() : this method will also work similar to trim() but the only difference is it will remove only white spaces at the end of String.
+------------
+Ex:
+    let name ="       Mohan         ";
+    name.trim();                 the output will be "             Mohan"
+
+-------------
