@@ -984,6 +984,117 @@ Ex:
 ------------
 Ex:
     let name ="       Mohan         ";
-    name.trim();                 the output will be "             Mohan"
+    name.trim();                 the output will be "Mohan"
 
+vi)JavaScript String Padding :
+------------------------------
+It pads a string with another string (multiple times) until it reaches a given length.
+
+1).padStart(length, "charecter to pad") :
+---------------------------------------
+this method is used to pad an element before the string.
+Ex:1
+-----
+   let a ="6";
+   document.println(a.padStart(4, "x"));      //result will be "xxx6"
+Ex:2
+-----
+   let numb = 6;                                  //This is not a String to use padStart method this variable should be a String.
+   let text = a.toString();
+   document.writeln(b.padStart(4, "x"));
+
+
+***Note:  
+   ----
+     let Name= "Mohan";
+     name.padStart(4,x);            //result will be Mohan
+Here first it will check the length of the given String here it is Name if its length is greater than the length in padStart() method
+
+
+2).padEnd(length, "char to pad"):
+   -----------------------------
+ this will pad an element after String.
+
+Ex :1
+-----
+     let a = "6";
+     document.println(a.padEnd(4, "x"));     //result will be "6xxx"
+Ex :2
+-----
+    let numb = 5;
+    let text = numb.toString();
+    let padded = text.padEnd(4,"0");        //result will be "5xxx"
+
+                                                            2/21/2024
+                                                            ---------
+vii)repeat():
+------------------
+This String method is used to repeat given String for given number of times.
+
+Syntax:
+       repeat(count);
+ Ex:
+    let name = "Mohan";
+    name.repeat(3);           //output will be "Mohan Mohan Mohan"
+
+viii)replace():
+--------------
+This method will replace a specific String with another String.
+Ex:
+    String x ="My name is Mohan Sai";
+    x.replace(Mohan,Rama);              //out put is ""My name is Rama Sai""
+
+***NOTE:
+--------
+This method will replace only the first match.If you want to change at every match we need to use regular expression with /g flag set.
+Ex:
+   let text = "Please visit Microsoft and Microsoft!";
+   let newText = text.replace("Microsoft", "W3Schools");     // output will be "Please visit W3Schools and Microsoft!"
+
+This replace() is case sensitive.So, we should be carefull while replacing a String
+Ex:
+   let text = "Please visit Microsoft!";
+   let newText = text.replace("MICROSOFT", "W3Schools");   //output will be "Please visit Microsoft!";
+
+***NOTE:
+--------
+To replace case insensitive use /i flag with the String.  ... Regular Expressions should be written without double quotes.
+Ex:
+   let name = "Mohan";
+   let fullName = name.replace(/MOHAN/i, "Mohan Sai");
+
+To replace all matches, use a regular expression with a /g flag (global match):
+let text = "Please visit Microsoft and Microsoft!";
+let newText = text.replace(/Microsoft/g, "W3Schools");    //output will be "Please visit W3Schools and W3Schools!"
+
+replaceAll():
 -------------
+This String method will replace.
+ Ex:
+   let text = "I love cats. Cats are very easy to love. Cats are very popular."
+   text = text.replaceAll("Cats","Dogs");
+   text = text.replaceAll("cats","dogs");       //output will be "I love dogs. Dogs are very easy to love. Dogs are very popular."
+
+The replaceAll() method allows you to specify a regular expression instead of a string to be replaced.
+If the parameter is a regular expression, the global flag (g) must be set, otherwise a TypeError is thrown.
+Ex:
+let text = "I love cats. Cats are very easy to love. Cats are very popular."
+text = text.replaceAll(/Cats/g,"Dogs");
+text = text.replaceAll(/cats/g,"dogs");
+
+
+split():
+--------
+By using this method we can convert an String into Array.
+Ex:
+   let alphabets = "a,b,c,d,e,f,g";
+   const text = alphabets.split(",");
+   text[0];         //output is "a"
+
+***NOTE : 
+    text.split(",")    // Split on commas 
+    text.split(" ")    // Split on spaces
+    text.split("|")    // Split on pipe
+
+
+
