@@ -1096,5 +1096,181 @@ Ex:
     text.split(" ")    // Split on spaces
     text.split("|")    // Split on pipe
 
+                                                              2/22/24
+                                                              -------
+
+String search Methods:
+----------------------
+1)indexOf():
+------------
+This method will returns the index of given String at first occurence. If that String is not found then it will returns -1.
+Ex:
+   let x = "My name is Mohan Sai";
+   x.indexOf("Mohan");                             // it will return 11
+   x.indexOf("kumar");                             // it will return -1
+
+2)lastIndexOf():
+----------------
+This method will return the index of last occurence of String and will return -1 if String not found.
+Ex:
+---
+let text = "Please locate where 'locate' occurs!";
+let index = text.lastIndexOf("locate");            //it will return 21
+let index = text.lastIndexOf("John");              // it will return -1
 
 
+***NOTE :
+---------
+This both methods will accepts second parameter also which will used as starting position for search.The lastIndexOf() methods searches backwards (from the end to the beginning), meaning: if the second parameter is 15, the search starts at position 15, and searches to the beginning of the string.
+Ex:
+let text = "Please locate where 'locate' occurs!";
+let index = text.indexOf("locate", 15);            //it will return 21
+let index_1 = text.lastIndexOf("locate",15);       //it will return 7
+
+3)search(parameter):
+-----------
+This method is also used to find a String or regular Expression in a String and return the positionif finds.
+ Ex:
+let text = "Please locate where 'locate' occurs!";
+text.search("locate");                                 //output will be 7
+
+***NOTE:
+--------
+search() method doesn't have second parameter to start search from position. Similarly indexOf() method cant search by using regular Expressions
+
+4)match(parameter):
+----------
+This method will returns an array with results after finding a required String(String which you want to find) or regular expression in a give String(the string in which you are finding).
+Ex:
+---
+let text = "The rain in SPAIN stays mainly in the plain";
+text.match("ain");                   // it will return when it matches at first occurence
+text.match(/ain/);                  //this is using regular expression
+text.match(/ain/g);                 //this will search globally, means it will check how many matches are there in given String
+text.match(/ain/gi);                //this is to searc globally, it will also returns case in-sensitive matches also)
+
+
+matchAll(parameter):
+----------
+The matchAll() method returns an iterator containing the results of matching a string against a string (or a regular expression).
+Ex:
+---
+let text = "I love cats. Cats are very easy to love. Cats are very popular."
+const iterator = text.matchAll("Cats");      //output is "Cats,Cats"
+   
+If parameter is a regular expression then we must use /g at the end of Expression otherwise it will throw a typeError
+Ex:
+---
+let text = "I love cats. Cats are very easy to love. Cats are very popular."
+const iterator = text.matchAll(/cats/g);
+const iterator = text.matchAll(/cats/gi);
+
+includes(parameter):
+-----------
+This method will return true if required String is found otherwise it will return false.
+Ex:
+---
+let text = "Hello world, welcome to the universe.";
+text.includes("world");                             //true
+text.includes("Mohan");                             //false
+
+we can also pass second parameter as starting position.
+Ex:
+---
+let text = "Hello world, welcome to the universe.";
+text.includes("world", 12);                           //false
+
+startsWith(parameter):
+-------------
+this method will check given String is Started with given parameter or not if yes it will return true otherwise false.
+Ex:
+---
+let text = "Hello world, welcome to the universe.";
+text.startsWith("Hello");                           //true
+text.startsWith("world")                            //false
+
+let text = "Hello world, welcome to the universe.";
+text.startsWith("world", 5)                         //false
+text.startsWith("world", 5)                         //true
+
+
+endsWith(parameter):
+-----------
+this method will retuern true if String will ends with given parameter otherwise it will return false.
+let text = "John Doe";
+text.endsWith("Doe");               //true
+
+let text = "Hello world, welcome to the universe.";
+text.endsWith("world", 11);              //true
+
+
+                                          String Templates
+                                          ----------------
+String templates uses  back-ticks instead of Quotes.
+Ex:
+---
+   let name = `Mohan Sai`;
+
+we can use quotes in String Templates
+Ex:
+---
+   let x = `my name is "Mohan" and i completed my degree at 'mvr colege'`;
+
+String templates can allow to write a String in multiple lines`;
+Ex:
+---
+   let text =
+             `The quick
+             brown fox
+            jumps over
+            the lazy dog`;
+
+Interpolation:
+--------------
+Template String provide an easy way to interpolate variables and expressions into strings.
+The method is called string interpolation.
+syntax:
+-------
+       ${...}
+
+Variable substitution:
+---------------------
+String templates allow to use variables in Strings.
+Ex:
+  let firstName = "Mohan";
+  let secondName = "Sai";
+  let fullName = `full name is "${firstName} ${secondName}"`;
+
+Automatic replacing of variables with real values is called string interpolation.
+
+Expression Substitution:
+------------------------
+Template Strings allow expressions in strings:
+Ex:
+---
+let price = 10;
+let VAT = 0.25;
+let total = `Total: ${(price * (1 + VAT)).toFixed(2)}`;
+
+Ex:
+---
+
+<!DOCTYPE html>
+<html>
+<body>
+<h1>JavaScript Template Strings</h1>
+<p>Templates allow variables in strings:</p>
+<p id="demo"></p>
+<p>Templates are not supported in Internet Explorer.</p>
+<script>
+let header = "Template Strings";
+let tags = ["template strings", "javascript", "es6"];
+let html = `<h2>${header}</h2><ul>`;
+for (const x of tags) {
+  html += `<li>${x}</li>`;
+}
+html += `</ul>`;
+document.getElementById("demo").innerHTML = html;
+</script>
+</body>
+</html>
