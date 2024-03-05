@@ -1274,3 +1274,363 @@ document.getElementById("demo").innerHTML = html;
 </script>
 </body>
 </html>
+
+                                                        02/23/2024
+                                                        ----------
+
+                                                    JavaScript Numbers
+                                                    -------------------
+JavaScript has only one type of number which will be written with or without decimal point.
+Ex:
+---
+let x= 3;          //number without decimal point
+let y= 3.14;       //number with decimal point
+let largeNumber = 10e5    //large numbers will be written as exponential form
+let smallNumber = 10e-5   // small number will be written as exponential form
+
+Integer Precision:
+------------------
+Integers (numbers without a period or exponent notation) are accurate up to 15 digits.
+Ex:
+---
+let x = 999999999999999;   // x will be 999999999999999
+let y = 9999999999999999;  // y will be 10000000000000000
+
+Floating Precision:
+The maximum number of decimals is 17.
+Ex:
+---
+0.2 + 0.1 = 0.30000000000000004
+
+To solve the problem above, it helps to multiply and divide:
+
+let x = (0.2 * 10 + 0.1 * 10) / 10;
+
+Numeric Strings:
+----------------
+JavaScript strings can have numeric content:
+let x = 100;         // x is a number
+let y = "100";       // y is a string
+
+JavaScript will try to convert strings to numbers in all numeric operations other than + operator:
+Ex:
+---
+let x = "100";
+let y = "10";
+let z = x / y;    //output will be 10
+let a = x * y;     // output will be 1000
+let b = x - y;    //output will be 90
+let c = x + y;      //output will be 10010
+ 
+NaN:
+---
+NaN stands for not a number. if we are trying to perform any arithmatic operations with non numeric strings then it will returns NaN.
+Ex:
+let x = 10/"apple";          //it will return NaN
+
+isNaN() method is used to check is it not a number or not.
+let x = 100 / "Apple";
+isNaN(x);             //true
+
+Watch out for NaN. If you use NaN in a mathematical operation, the result will also be NaN:
+let x = NaN;
+let y = 5;
+let z = x + y;       //output will be NaN
+
+let x = NaN;
+let y = "5";
+let z = x + y;        //output will be NaN5
+
+NaN is a number: typeof NaN returns number:
+typeof NaN;          //number
+
+
+Infinity
+Infinity (or -Infinity) is the value JavaScript will return if you calculate a number outside the largest possible number.
+
+Division by 0 (zero) also generates Infinity:
+Ex:
+----
+let x =  2 / 0;
+let y = -2 / 0;
+
+Infinity is a number: typeof Infinity returns number.
+typeof Infinity;            //number
+
+
+Hexadecimal:
+-----------
+JavaScript interprets numeric constants as hexadecimal if they are preceded by 0x.
+Never write a number with a leading zero (like 07).
+Some JavaScript versions interpret numbers as octal if they are written with a leading zero.
+By default, JavaScript displays numbers as base 10 decimals.
+But you can use the toString() method to output numbers from base 2 to base 36.
+Hexadecimal is base 16. Decimal is base 10. Octal is base 8. Binary is base 2.
+Ex:
+---
+Hexatrigesimal (base 36): w
+Duotrigesimal (base 32): 10
+Hexadecimal (base 16): 20
+Duodecimal (base 12): 28
+Decimal (base 10): 32
+Octal (base 8): 40
+Binary (base 2): 100000
+
+
+                                         Number Methods
+                                         --------------
+1)toString():
+------------- 
+this method is used to return number as String
+Ex:
+---
+let x= 10;
+x.toString()         //10 type is String
+(10).toString()      //10 type is String
+(5+5).toString()     //10 type is String
+
+
+2)toExponential():
+-----------------
+This method will return String by rounding off a number and written in exponential form.Parameter will define how many digits behind decimal point.The parameter is optional. If you don't specify it, JavaScript will not round the number.
+Ex:
+----
+let x = 8.23456;
+x.toExponential();      //8.23456e+0
+x.toExponential(2);      //8.24e+0
+x.toExponential(4);      //8.2346e+0
+x.toExponential(6);      //8.234560e+0
+
+
+3)toFixed():
+------------
+This method will return a string by rounding off given number. arameter will define how many digits behind decimal point.
+let x = 8.23456;
+x.toFixed(0);             //8.23456
+x.toFixed(2);             //8.23
+x.toFixed(4);             //8.2346
+x.toFixed(6);             //8.234560
+
+4)toPrecision()
+Ex:
+---
+let x = 9.65345676;
+  x.toPrecision()          //9.65345676
+  x.toPrecision(2)         //9.7
+  x.toPrecision(4)         // 9.653
+  x.toPrecision(6);        //9.65346
+
+
+ valueOf():
+-----------
+This method will return number as number
+Ex:
+---
+let x = 123;
+x.valueOf();                //123
+(123).valueOf();            //123
+(100 + 23).valueOf();       //123
+
+Converting Variables to numbers:
+--------------------------------
+There are few methods which can convert a variable to a number
+1).Number()
+2).parseInt()
+3).parseFloat()
+
+
+
+Number():
+--------
+we can use this method to convert a variable to Number.If the number cannot be converted, NaN (Not a Number) is returned.
+Ex:
+---
+let x = "10";
+  Number(x);         //10 and type is Number
+  Number(true)            //1
+  Number(false)           //0
+  Number("10")            //10
+  Number("  10")          //10
+  Number("10  ")          //10
+  Number(" 10  ")         //10
+  Number("10.33")         //10.33
+  Number("10,33")         //NaN
+  Number("10 33")         //NaN
+  Number("John");         //NaN
+
+
+parseInt():
+-----------
+parseInt() parses a string and returns a whole number. Spaces are allowed. Only the first number is returned:
+Ex:
+---
+parseInt("-10");              //-10
+parseInt("-10.33");           //-10
+parseInt("10");               //10
+parseInt("10.33");            //10
+parseInt("10 20 30");         //10
+parseInt("10 years");         //10
+parseInt("years 10");         //NaN
+
+parseFloat():
+-------------
+parseFloat() parses a string and returns a number. Spaces are allowed. Only the first number is returned:
+Ex:
+---
+parseFloat("10");              //10
+parseFloat("10.33");           //10.33
+parseFloat("10 20 30");        //10
+parseFloat("10 years");        //10
+parseFloat("years 10");        //NaN
+
+
+Number Object Methods:
+---------------------
+These object methods belong to the Number object:
+
+Number.isInteger()	Returns true if the argument is an integer
+Number.isSafeInteger()	Returns true if the argument is a safe integer
+Number.parseFloat()	Converts a string to a number
+Number.parseInt()	Converts a string to a whole number
+
+
+                                                        3/06/2024
+                                                        ---------
+
+
+                                                    JavaScript Arrays
+                                                    -----------------
+Array:
+------
+
+Array is a special type of variable which is used to store multiple values.We need to initialize array when creating it.
+
+Ex:
+---
+    const myArray;           //will give error
+    const myArray = [1,2,3,4,5,6];
+
+We can also create an array first and we can assign values later also
+Ex:
+---
+       const myArray = [];
+       myArray[0] = 1;
+       myArray[1] = 2;
+
+we can also create an array using new keyword.
+Ex:
+---
+        const myArray = new Array(1,2,3,4,5,6);
+
+
+using new keyword will increase complexity.
+
+
+Note:
+   "const myArr1 = [4];"   is not equals to  "const myArr1 = new Array(4);"
+
+We can change array elements whenever we want
+Ex:
+---
+  const myArray = [1,2,3,4,5,6];
+  myArray[0] = 7;
+  myArray;                // result will be 7,2,3,4,5,6
+
+Note:
+-----
+       We can store objects, Arrays and also functions in as a array elements.
+
+Properties :
+-------------
+
+length property:
+----------------
+this is used to know the size of an array.
+ const myArray = [1,2,3,4,5,6];
+ myArray.length                           //6
+
+push property:
+--------------
+this property is used to add an element at the end of an array.
+Ex:
+---
+ const myArray = [1,2,3,4,5,6];
+ myArray.push(7);
+ myArray;                       //1,2,3,4,5,6,7
+
+
+we can also add new item to an array using length property.
+Ex:
+----
+   const myArray = [1,2,3,4,5,6];
+   myArray[myArray.lenth] = 7;
+   myArray;                              //1,2,3,4,5,6,7
+
+
+OBJECTS:
+--------
+Objects also used to store multiple values.
+Ex:
+---
+const myObj = {
+                 name : "Mohan",
+                 age : 23
+              }
+
+Object and Arrays are used to store multiple. But the difference is arrays use numbered index whereas objects use named indexes.data type of both array and object is same.to over come this problem we can use an array method which is "isArray()".
+
+
+Ex:
+---
+     const myArray = [1,2,3,4,5,6];
+     Array.isArray(myArray);                 //true
+
+
+                                                          ARRAY METHODS
+                                                          -------------
+
+
+length:
+-------
+this property is used to know the length of an array 
+Ex:
+---
+    const myArray = [1,2,3,4,5,6];
+    myArray.length;                         //6
+
+toString() :
+------------
+ this method is used to convert an array to a string 
+Ex:
+---
+     const myArray = [1,2,3,4,5,6];
+     myArray.toString();                     //1,2,3,4,5,6
+
+at():
+----
+this method is used to get the element in a given index
+Ex:
+---
+       const myArray = [1,2,3,4,5,6];
+       myArray.at(3);                    //4  
+join():
+------- 
+this method is used to join array elements.
+Ex:
+---
+   const myArray = [1,2,3,4,5,6];
+   myArray.join("#");                     //1#2#3#4#5#6
+
+push():
+------
+this method is used to add a new element to an array at the end.
+Ex:
+---
+   const myArray = [1,2,3,4,5,6];
+   myArray.push(7);                  //1,2,3,4,5,6,7
+
+pop():
+------
+this method is used to remove an element from last position of an array.
+
+      
